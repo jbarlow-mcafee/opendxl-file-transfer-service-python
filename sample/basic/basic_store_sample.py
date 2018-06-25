@@ -62,8 +62,8 @@ with DxlClient(config) as client:
             bytes_read += len(segment)
             file_hash.update(segment)
             if bytes_read == file_size:
-                other_fields[FileStoreParam.FILE_COMPLETE] = \
-                    FileStoreParam.FILE_STORE
+                other_fields[FileStoreParam.FILE_RESULT] = \
+                    FileStoreParam.FILE_RESULT_STORE
                 other_fields[FileStoreParam.FILE_SIZE] = str(file_size)
                 other_fields[FileStoreParam.FILE_HASH] = file_hash.hexdigest()
 
